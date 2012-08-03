@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  english: MyString
+  translation: MyString
+  remembered: false
+  remembercount: 1
+
+two:
+  english: MyString
+  translation: MyString
+  remembered: false
+  remembercount: 1

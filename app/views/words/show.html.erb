@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>English:</b>
+  <%= @word.english %>
+</p>
+
+<p>
+  <b>Translation:</b>
+  <%= @word.translation %>
+</p>
+
+<% if @word.remembered == true %>
+<p>
+  <b>Remembered:</b>
+  <%= @word.remembercount %>
+  times
+</p>
+<% else %>
+<p>
+  <b>Not remembered!</b>
+</p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>

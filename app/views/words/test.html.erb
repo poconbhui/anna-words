@@ -1,0 +1,32 @@
+<% if flash[:notice] %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<%= form_for @test_word do |f| %>
+  <%= hidden_field_tag :test, "test" %>
+  <% if rand(0..1) == 0 %>
+  <div class="field">
+    <%= f.label :english, "Translate to English #{@test_word.translation}" %><br />
+    <%= text_field_tag "word[english]" %>
+  </div>
+    <%= f.hidden_field :translation %>
+
+  <% else %>
+
+    <%= f.hidden_field :english %>
+  <div class="field">
+    <%= f.label :english, "Translate to French #{@test_word.english}" %><br />
+    <%= text_field_tag "word[translation]" %>
+  </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to 'See All Words', words_path %>
+</div>
