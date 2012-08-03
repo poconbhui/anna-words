@@ -3,12 +3,18 @@ class WordsController < ApplicationController
 
     @words = Word.all
 
-    if rand(0..10) == 0
+    if rand(10) == 0
       @test_word = @words.slice!(rand(@words.length))
     else
-      @test_word = @words.slice!(rand(0..10))
+      @test_word = @words.slice!(rand(10))
     end
     @test_word ||= @words.slice!(0)
+
+    if @test_word.nil?
+      flash[:notice] = "You must enter some words for testing!"
+      redirect_to words_url
+      return
+    end
 
   end
 

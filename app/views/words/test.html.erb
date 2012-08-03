@@ -6,7 +6,7 @@
 
 <%= form_for @test_word do |f| %>
   <%= hidden_field_tag :test, "test" %>
-  <% if rand(0..1) == 0 %>
+  <% if rand(1) == 0 %>
   <div class="field">
     <%= f.label :english, "Translate to English #{@test_word.translation}" %><br />
     <%= text_field_tag "word[english]" %>
