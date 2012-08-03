@@ -2,7 +2,8 @@ Words::Application.routes.draw do
   resources :words
 
   root :to => "words#test"
-  match "/test" => "words#test", :as => :words_test
+  match "/" => "words#test", :as => :words_test
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
