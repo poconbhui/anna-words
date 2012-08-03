@@ -78,8 +78,8 @@ class WordsController < ApplicationController
     @word = Word.find(params[:id])
 
     if params[:test]
-      if @word.english == params[:word][:english] && 
-         @word.translation == params[:word][:translation]
+      if @word.english.downcase == params[:word][:english].downcase && 
+         @word.translation.downcase == params[:word][:translation].downcase
         
         count = @word.remembercount + 1
 
